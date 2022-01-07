@@ -1,4 +1,4 @@
-package com.skilldistillery.caprate.property.entities;
+package com.skilldistillery.caprate.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

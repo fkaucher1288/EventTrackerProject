@@ -1,4 +1,4 @@
-package com.skilldistillery.property;
+package com.skilldistillery.caprate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
