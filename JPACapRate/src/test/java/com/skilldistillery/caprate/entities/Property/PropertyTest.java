@@ -12,6 +12,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.skilldistillery.caprate.property.entities.Property;
+
 class PropertyTest {
 	
 	private static EntityManagerFactory emf;
