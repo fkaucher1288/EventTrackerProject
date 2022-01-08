@@ -46,6 +46,10 @@ class PropertyTest {
 	void test() {
 		assertNotNull(property);
 		assertEquals("1234 Golden Ln", property.getAddress());
+		assertEquals("Denver", property.getCity());
+		assertEquals(365000, property.getMarketPrice());
+		assertEquals(21600, property.getExpectedCashflow());
+		assertEquals(5.92, property.getCapRate());
 
 	}
 
