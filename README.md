@@ -9,9 +9,10 @@
 ##Angular Front End
 
 ## REST API Reference
-|Return type     | HTTP Method| URI            | Request Body |
-|----------------|------------|----------------|--------------|
-| List<Property> |    GET     | api/properties |
+|Return type     | HTTP Method| URI            | Request Body | Purpose   |
+|----------------|------------|----------------|--------------|-----------|
+| List<Property> |    GET     | api/properties |                List
+
 
 ##Technologies Used
 
