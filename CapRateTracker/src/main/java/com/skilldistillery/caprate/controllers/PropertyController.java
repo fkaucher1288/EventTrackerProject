@@ -42,8 +42,18 @@ public class PropertyController {
 		return propertySvc.updateProperty(property, id);
 	}
 	@DeleteMapping("properties/{id}")
-	public void deleteProperty(@PathVariable int id) {
-		propertySvc.deleteProperty(id);
+	public void deleteProperty(@PathVariable int id, HttpServletResponse res) {
+		try {
+			if(propertySvc.deleteProperty(id)) {
+				res.setStatus(204);
+			}
+			else {
+				res.setStatus(404);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			res.setStatus(400);
+		}
 	}
 	
 	@PostMapping("properties")
