@@ -22,8 +22,12 @@ public class PropertyServiceImpl implements PropertyService {
 
 	@Override
 	public Property getPropertyById(int id) {
-		
-		return propertyRepo.getById(id) ;
+		Optional<Property> propOpt = propertyRepo.findById(id);
+		Property prop = null;
+		if(propOpt.isPresent()) {
+			prop = propOpt.get();
+		}
+		return prop;
 	}
 
 	@Override

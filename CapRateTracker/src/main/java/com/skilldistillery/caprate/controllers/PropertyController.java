@@ -46,9 +46,9 @@ public class PropertyController {
 		propertySvc.deleteProperty(id);
 	}
 	
-	@PostMapping
-	public Property updateProperty(@RequestBody Property property) {
-		
+	@PostMapping("properties")
+	public Property createProperty(@RequestBody Property property) {
+		return propertySvc.createProperty(property);
 	}
 }
 	
