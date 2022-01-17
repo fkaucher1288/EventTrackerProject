@@ -37,6 +37,12 @@ function init() {
 		};
 		createProperty(newProperty);
 	});
+	
+	let portfolioDataDisplayButton = document.getElementById('portfolioDataButton');
+	portfolioDataDisplayButton.addEventListener('click', function(event){
+		event.preventDefault();
+		getAllProperties();
+	});
 
 }
 function getPropertyById(id) {
@@ -71,6 +77,7 @@ function getAllProperties() {
 				let properties = JSON.parse(xhr.responseText);
 				console.log(properties);
 				table(properties);
+				displayPortfolioData(properties);
 			}
 			else if (xhr.status === 404) {
 				displayError("Invalid entry")
@@ -281,6 +288,70 @@ function deleteProperty(property) {
 		}
 	};
 	xhr.send();
+}
+
+function displayPortfolioData(properties) {
+	let portfolioDataDiv = document.getElementById('portfolioData');
+	portfolioDataDiv.textContent = '';
+	let portfolioDataTable = document.createElement('table');
+	portfolioDataTable.id = 'portfolioTable';
+	portfolioDataTable.name = portfolioDataTable.id;
+	portfolioDataDiv.appendChild(portfolioDataTable);
+	
+	let thead = document.createElement('thead');
+	portfolioDataTable.appendChild(thead);
+	
+	let trow = document.createElement('tr');
+	thead.appendChild(trow);
+	
+	let totalProperties = document.createElement('th');
+	totalProperties.textContent = "Properties";
+	trow.appendChild(totalProperties);
+	
+	let totalValue = document.createElement('th');
+	totalValue.textContent = "Total Portfolio Value";
+	trow.appendChild(totalValue);
+	
+	let avgCapRate = document.createElement('th');
+	avgCapRate.textContent = "Avg Portfolio Cap Rate";
+	trow.appendChild(avgCapRate);
+	
+	
+	let tBody = document.createElement('tbody');
+	portfolioDataTable.appendChild(tBody);
+	
+	let row = document.createElement('tr');
+	tBody.appendChild(row);
+	
+	let totalPropertiesCount = properties.length;
+	
+	let totalValueCount = 0;
+	
+	let avgCapRateCount = 0;
+	
+	let capRateTotal = 0;
+	
+	for(const property of properties) {
+		totalValueCount += property.marketPrice;
+		capRateTotal += property.capRate;
+	}
+		avgCapRateCount = Math.round((capRateTotal / totalPropertiesCount) * 100) / 100;
+		
+	let totalPropertiesNumber = document.createElement('td');
+	totalPropertiesNumber.textContent = totalPropertiesCount;
+	row.appendChild(totalPropertiesNumber);
+	
+	let totalValueNumber = document.createElement('td');
+	totalValueNumber.textContent = totalValueCount;
+	row.appendChild(totalValueNumber);
+	
+	let totalAvgCapRateNumber = document.createElement('td');
+	totalAvgCapRateNumber.textContent = avgCapRateCount;
+	row.appendChild(totalAvgCapRateNumber);
+	
+	
+	
+	
 }
 
 //function displayAllProperties(properties) {
