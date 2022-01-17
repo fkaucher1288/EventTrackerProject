@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cap Rate Tracker</title>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+
+<body>
+
+
+<main>
+	<h1>Cap Rate Tracker</h1>
+	<h3>Track your investment properties here!</h3>
+	
+	<form name="caprateForm">
+    <input type="number" name="id">
+    <button name="lookup">Look up property by ID</button>
+  </form>
+  <div id="output">
+	<div id="propertyData"></div>
+	
+  </div>
+  <br>
+  
+  <form name="allPropertiesForm">
+  <button name="lookup"> List All Investment Properties</button>
+  </form>
+  
+  <form name="newPropertyForm">
+  <h3>Add a new property:</h3>
+  <label for="address">Address:</label>
+  <input type="text" name="address" placeholder="address"><br>
+  <label for="city">City:</label>
+  <input type="text" name="city" placeholder="city"><br>
+  <label for="state">State:</label>
+  <input type="text" name="state" placeholder="state"><br>
+  <label for="marketPrice">Market Price:</label>
+  <input type="text" name="marketPrice" placeholder="market price"><br>
+  <label for="expectedCashflow">Expected Cashflow:</label>
+  <input type="text" name="expectedCashflow" placeholder="expected cashflow"><br>
+  <label for="capRate">Cap Rate:</label>
+  <input type="text" name="capRate" placeholder="cap rate"><br>
+  <label for="propPhoto">Property Photo:</label>
+  <input type="text" name="propPhoto" placeholder="property photo"><br>
+  <button name="addProperty">Submit</button>
+  </form><br>
+  
+   <form name="updatePropertyForm">
+  <h3>Update an existing Property:</h3>
+  <label for="address">Address:</label>
+  <input type="text" name="address" placeholder="address"><br>
+  <label for="city">City:</label>
+  <input type="text" name="city" placeholder="city"><br>
+  <label for="state">State:</label>
+  <input type="text" name="state" placeholder="state"><br>
+  <label for="marketPrice">Market Price:</label>
+  <input type="text" name="marketPrice" placeholder="market price"><br>
+  <label for="expectedCashflow">Expected Cashflow:</label>
+  <input type="text" name="expectedCashflow" placeholder="expected cashflow"><br>
+  <label for="capRate">Cap Rate:</label>
+  <input type="text" name="capRate" placeholder="cap rate"><br>
+  <label for="propPhoto">Property Photo:</label>
+  <input type="text" name="propPhoto" placeholder="property photo"><br>
+  <button name="addProperty">Submit</button>
+  </form>
+  
+  
+  
+</main>	
+
+
+
+</body>
+
+
+</html>
